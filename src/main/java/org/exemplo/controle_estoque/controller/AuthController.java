@@ -23,7 +23,7 @@ import java.util.Date;
 public class AuthController {
 
     @Autowired
-    private AuthenticationManager AuthenticationManager;
+    private AuthenticationManager authenticationManager;
 
     @Autowired
     private UsuarioRepository usuarioRepository;
@@ -39,7 +39,7 @@ public class AuthController {
 
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody org.exemplo.controle_estoque.model.Usuario loginUsuario) {
-        Authentication authentication = AuthenticationManager.authenticate(
+        Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken( loginUsuario.getUsername(), loginUsuario.getPassword() )
         );
 

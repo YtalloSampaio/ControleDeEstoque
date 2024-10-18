@@ -1,7 +1,6 @@
 package org.exemplo.controle_estoque.config;
 
 import jakarta.servlet.http.HttpServletResponse;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.web.filter.OncePerRequestFilter;
@@ -17,10 +16,9 @@ import java.io.IOException;
 
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
-    @Autowired
+
     private JwtTokenProvider jwtTokenProvider;
 
-    @Autowired
     private UserDetailsService userDetailsService;
 
     @Override
